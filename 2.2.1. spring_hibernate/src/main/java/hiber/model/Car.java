@@ -17,7 +17,7 @@ public class Car {
     private String model;
 
     @OneToOne
-    @JoinColumn(name = "user_id") // Указывает, что это поле является внешним ключом, связывающим сущность Car с сущностью User
+    @JoinColumn(name = "user_id")
     private User user;
 
     public Car() {}
