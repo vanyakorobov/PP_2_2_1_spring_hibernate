@@ -16,10 +16,6 @@ public class Car {
     @Column(name = "model")
     private String model;
 
-    @OneToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
     public Car() {}
 
     public Car(String model, int series) {

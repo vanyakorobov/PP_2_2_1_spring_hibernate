@@ -19,7 +19,8 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   @OneToOne(mappedBy = "car", cascade = CascadeType.ALL)
+   @OneToOne(cascade = CascadeType.ALL)
+   @JoinColumn(name="car_id")
    private Car car;
 
    public User() {}
