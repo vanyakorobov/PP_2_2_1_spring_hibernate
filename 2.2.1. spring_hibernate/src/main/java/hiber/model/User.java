@@ -19,7 +19,7 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+   @OneToOne(mappedBy = "car", cascade = CascadeType.ALL)
    private Car car;
 
    public User() {}
