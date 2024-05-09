@@ -51,7 +51,7 @@ public class MainApp {
             System.out.println("Car Model = " + user.getCar().getModel());
             System.out.println("Car Series = " + user.getCar().getSeries());
          } else {
-            System.out.println("User does not have a car.");
+            System.out.println("У пользователя нет автомобиля");
          }
          System.out.println();
       }
