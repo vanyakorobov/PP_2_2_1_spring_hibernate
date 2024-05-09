@@ -56,6 +56,29 @@ public class MainApp {
          System.out.println();
       }
 
+      String modelToSearch = "Mercedes";
+      int seriesToSearch = 2020;
+
+      List<User> foundUsers = userService.getUsersByCarModelAndSeries(modelToSearch, seriesToSearch);
+
+      if (foundUsers.isEmpty()) {
+         System.out.println("No users found with the specified car model '" + modelToSearch + "' and series '" + seriesToSearch + "'.");
+      } else {
+         System.out.println("Users found with the specified car model '" + modelToSearch + "' and series '" + seriesToSearch + "':");
+         for (User user : foundUsers) {
+            System.out.println("Id = " + user.getId());
+            System.out.println("First Name = " + user.getFirstName());
+            System.out.println("Last Name = " + user.getLastName());
+            System.out.println("Email = " + user.getEmail());
+            if (user.getCar() != null) {
+               System.out.println("Car Model = " + user.getCar().getModel());
+               System.out.println("Car Series = " + user.getCar().getSeries());
+            } else {
+               System.out.println("User does not have a car.");
+            }
+            System.out.println();
+         }
+      }
       context.close();
    }
 }
