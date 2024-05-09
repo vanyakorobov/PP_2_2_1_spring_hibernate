@@ -62,9 +62,9 @@ public class MainApp {
       List<User> foundUsers = userService.getUsersByCarModelAndSeries(modelToSearch, seriesToSearch);
 
       if (foundUsers.isEmpty()) {
-         System.out.println("No users found with the specified car model '" + modelToSearch + "' and series '" + seriesToSearch + "'.");
+         System.out.println("Не найдено пользователей с указанной моделью автомобиля '" + modelToSearch + "' и серией '" + seriesToSearch + "'.");
       } else {
-         System.out.println("Users found with the specified car model '" + modelToSearch + "' and series '" + seriesToSearch + "':");
+         System.out.println("Найдены пользователи с указанной моделью автомобиля '" + modelToSearch + "' и серией '" + seriesToSearch + "':");
          for (User user : foundUsers) {
             System.out.println("Id = " + user.getId());
             System.out.println("First Name = " + user.getFirstName());
@@ -74,7 +74,7 @@ public class MainApp {
                System.out.println("Car Model = " + user.getCar().getModel());
                System.out.println("Car Series = " + user.getCar().getSeries());
             } else {
-               System.out.println("User does not have a car.");
+               System.out.println("У пользователя нет автомобиля.");
             }
             System.out.println();
          }
