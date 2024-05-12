@@ -1,6 +1,7 @@
 package hiber;
 
 import hiber.config.AppConfig;
+import hiber.dao.UserDao;
 import hiber.model.Car;
 import hiber.model.User;
 import hiber.service.UserService;
@@ -15,6 +16,7 @@ public class MainApp {
               new AnnotationConfigApplicationContext(AppConfig.class);
 
       UserService userService = context.getBean(UserService.class);
+      UserDao userDao = context.getBean(UserDao.class);
 
       userService.add(new User("User1", "Lastname1", "user1@mail.ru"));
       userService.add(new User("User2", "Lastname2", "user2@mail.ru"));
@@ -59,7 +61,7 @@ public class MainApp {
       String modelToSearch = "Mercedes";
       int seriesToSearch = 2020;
 
-      List<User> foundUsers = userService.getUsersByCarModelAndSeries(modelToSearch, seriesToSearch);
+      List<User> foundUsers = userDao.getUsersByCarModelAndSeries(modelToSearch, seriesToSearch);
 
       if (foundUsers.isEmpty()) {
          System.out.println("Не найдено пользователей с указанной моделью автомобиля '" + modelToSearch + "' и серией '" + seriesToSearch + "'.");
