@@ -7,7 +7,6 @@ import hiber.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.sql.SQLException;
-import java.util.List;
 
 public class MainApp {
    public static void main(String[] args) throws SQLException {
@@ -22,14 +21,18 @@ public class MainApp {
       Car car4 = new Car("Audi", 2018);
 
       User user1 = new User("User1", "Lastname1", "user1@mail.ru");
+      user1.setCar(car1);
       User user2 = new User("User2", "Lastname2", "user2@mail.ru");
+      user2.setCar(car2);
       User user3 = new User("User3", "Lastname3", "user3@mail.ru");
+      user3.setCar(car3);
       User user4 = new User("User4", "Lastname4", "user4@mail.ru");
+      user4.setCar(car4);
 
-      userService.add(new User("User1", "Lastname1", "user1@mail.ru"));
-      userService.add(new User("User2", "Lastname2", "user2@mail.ru"));
-      userService.add(new User("User3", "Lastname3", "user3@mail.ru"));
-      userService.add(new User("User4", "Lastname4", "user4@mail.ru"));
+      userService.add(user1);
+      userService.add(user2);
+      userService.add(user3);
+      userService.add(user4);
 
       for (User user : userService.listUsers()) {
          System.out.println(user + " " + user.getCar());
